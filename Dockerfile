@@ -9,7 +9,8 @@ RUN apt-get update \
 	                libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
 	                libgtk2.0-dev wget zip unzip \
 	                libatlas-base-dev gfortran \
-	                python2.7-dev python3.5-dev python3-numpy
+	                python2.7-dev python3.5-dev python3-numpy \
+                    ros-lunar-perception
 
 # Install OpenCV
 RUN cd \
