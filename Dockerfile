@@ -1,6 +1,6 @@
 FROM ros:lunar-ros-core
 
-MAINTAINER Markus Kohout <kohout@fastmail.com>
+MAINTAINER Markus Kohout <kohout@embedded.rwth-aachen.de>
 
 RUN apt-get update -qq
 RUN apt-get -y upgrade
