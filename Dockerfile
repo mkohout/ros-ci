@@ -42,6 +42,6 @@ RUN cd \
     && sh -c 'echo 'duo' >> /etc/modules' \
 && depmod
 
-RUN rosdep init &&
-    rosdep update
+RUN rosdep init \
+    && rosdep update
 RUN /bin/bash -c "source /opt/ros/lunar/setup.bash"
