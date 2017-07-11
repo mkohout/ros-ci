@@ -44,5 +44,4 @@ RUN cd \
 
 RUN rosdep init &&
     rosdep update
-RUN echo "source /opt/ros/lunar/setup.bash" >> ~/.bashrc
-RUN source ~/.bashrc
+RUN /bin/bash -c "source /opt/ros/lunar/setup.bash"
