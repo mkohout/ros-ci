@@ -4,12 +4,12 @@ MAINTAINER Markus Kohout <kohout@embedded.rwth-aachen.de>
 
 RUN apt-get update -qq
 RUN apt-get -y upgrade
-RUN apt-get -y install build-essential software-properties-common cmake pkg-config
-RUN apt-get -y install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
-RUN apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-RUN apt-get -y install libgtk2.0-dev wget zip unzip
-RUN apt-get -y install libatlas-base-dev gfortran
-RUN apt-get -y install python2.7-dev python3.5-dev python3-numpy
+RUN apt-get -y install build-essential software-properties-common cmake pkg-config \
+	&& apt-get -y install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev \
+	&& apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
+	&& apt-get -y install libgtk2.0-dev wget zip unzip \
+	&& apt-get -y install libatlas-base-dev gfortran \
+	&& apt-get -y install python2.7-dev python3.5-dev python3-numpy
 
 # Install OpenCV
 RUN cd \
@@ -45,3 +45,4 @@ RUN cd \
 RUN rosdep init \
     && rosdep update
 RUN /bin/bash -c "source /opt/ros/lunar/setup.bash"
+
