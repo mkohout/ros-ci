@@ -1,4 +1,4 @@
-FROM ros:lunar-ros-core
+FROM ros:lunar
 
 MAINTAINER Markus Kohout <kohout@embedded.rwth-aachen.de>
 
