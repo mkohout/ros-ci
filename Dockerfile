@@ -41,3 +41,8 @@ RUN cd \
     && cp duo-1024-4.4.0-64-generic.ko /lib/modules/$(uname -r)/kernel/drivers/duo.ko \
     && sh -c 'echo 'duo' >> /etc/modules' \
 && depmod
+
+RUN rosdep init &&
+    rosdep update
+RUN echo "source /opt/ros/lunar/setup.bash" >> ~/.bashrc
+RUN source ~/.bashrc
