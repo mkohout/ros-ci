@@ -8,7 +8,7 @@ RUN apt-get update \
 	                libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev \
 	                libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
 	                libgtk2.0-dev wget zip unzip \
-	                libatlas-base-dev gfortran \
+	                libatlas-base-dev gfortran ocl-icd-opencl-dev \
 	                python2.7-dev python3.5-dev python3-numpy \
                     ros-lunar-perception
 
