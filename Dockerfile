@@ -2,12 +2,14 @@ FROM ros:lunar
 
 MAINTAINER Markus Kohout <kohout@embedded.rwth-aachen.de>
 
+ADD /python_packages.txt /python_packages.txt
+
 RUN apt-get update \
     && apt-get -y upgrade \
     && apt-get -y install build-essential cmake pkg-config \
 	                libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev \
 	                libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
-	                libgtk2.0-dev wget zip unzip \
+	                libgtk2.0-dev wget zip unzip python-pip \
 	                libatlas-base-dev gfortran ocl-icd-opencl-dev \
 	                python2.7-dev python3.5-dev python3-numpy \
                     ros-lunar-perception
@@ -42,6 +44,9 @@ RUN cd \
     && cp duo-1024-4.4.0-64-generic.ko /lib/modules/$(uname -r)/kernel/drivers/duo.ko \
     && sh -c 'echo 'duo' >> /etc/modules' \
 && depmod
+
+# Install Python Packages
+RUN pip install -r /python_packages.txt
 
 RUN rosdep update
 RUN /bin/bash -c "source /opt/ros/lunar/setup.bash"
