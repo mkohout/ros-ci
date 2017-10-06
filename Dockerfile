@@ -36,15 +36,6 @@ RUN cd \
     && tar -C /opt -xzf pylonSDK*.tar.gz # \
     #&& ./setup-usb.sh -y
 
-# Install Duo3D library
-RUN cd \
-    && wget https://git.rwth-aachen.de/team_galaxis/archives/raw/master/duo3d/CL-DUO3D-LIN-1.0.80.20.zip \
-    && unzip "CL-DUO3D-LIN-1.0.80.20" \
-    && cd CL-DUO3D-LIN-1.0.80.20/DUODriver \
-    && cp duo-1024-4.4.0-64-generic.ko /lib/modules/$(uname -r)/kernel/drivers/duo.ko \
-    && sh -c 'echo 'duo' >> /etc/modules' \
-&& depmod
-
 # Install Python Packages
 RUN pip install -r /python_packages.txt
 
