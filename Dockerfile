@@ -40,5 +40,5 @@ RUN cd \
 RUN pip install -r /python_packages.txt
 
 RUN rosdep update
-RUN /bin/bash -c "source /opt/ros/lunar/setup.bash"
+RUN /bin/bash -c "source /opt/ros/kinetic/setup.bash"
 
