@@ -1,4 +1,4 @@
-FROM ros:lunar
+FROM ros:kinetic-ros-base
 
 MAINTAINER Markus Kohout <kohout@embedded.rwth-aachen.de>
 
