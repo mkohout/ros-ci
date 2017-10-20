@@ -13,11 +13,6 @@ RUN apt-get update \
 	                libatlas-base-dev gfortran ocl-icd-opencl-dev \
 	                python2.7-dev openssh-client \
                     ros-kinetic-perception
-
-# Install Python Packages
-RUN pip install -r /python_packages.txt
-
-RUN rosdep update
-
-RUN /bin/bash -c "source /opt/ros/kinetic/setup.bash"
+    && pip install -r /python_packages.txt
+    && rosdep update
 
