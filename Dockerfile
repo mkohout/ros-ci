@@ -12,7 +12,7 @@ RUN apt-get update \
 	                libgtk2.0-dev wget zip unzip python-pip \
 	                libatlas-base-dev gfortran ocl-icd-opencl-dev \
 	                python2.7-dev openssh-client \
-                    ros-kinetic-perception
-    && pip install -r /python_packages.txt
+                    ros-kinetic-perception \
+    && pip install -r /python_packages.txt \
     && rosdep update
 
