@@ -14,19 +14,6 @@ RUN apt-get update \
 	                python2.7-dev openssh-client \
                     ros-kinetic-perception
 
-# Install OpenCV
-RUN cd \
-    && wget https://github.com/opencv/opencv/archive/3.2.0.zip \
-    && unzip 3.2.0.zip \
-    && cd opencv-3.2.0 \
-    && mkdir build \
-    && cd build \
-    && cmake .. \
-    && make -j3 \
-    && make install \
-    && cd \
-    && rm 3.2.0.zip
-
 # Install Python Packages
 RUN pip install -r /python_packages.txt
 
