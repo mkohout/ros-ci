@@ -11,7 +11,7 @@ RUN apt-get update \
 	                libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
 	                libgtk2.0-dev wget zip unzip python-pip \
 	                libatlas-base-dev gfortran ocl-icd-opencl-dev \
-	                python2.7-dev \
+	                python2.7-dev openssh-client \
                     ros-kinetic-perception
 
 # Install OpenCV
